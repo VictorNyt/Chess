@@ -12,6 +12,7 @@ namespace Chess.ChessProgram
         { 
             do
             {
+                Console.Clear();
                 Console.WriteLine("Chess\n1 - Player\n2 - Players\n3 - Exit");
                 string players = Console.ReadLine();
                 switch (players)
@@ -38,11 +39,7 @@ namespace Chess.ChessProgram
             dec = Console.ReadLine();
             if (dec == "y" | dec == "Y" | dec == "yes" | dec == "Yes" | dec == "s" | dec == "S")
             {
-                loop = false;
-            }
-            else
-            {
-                Console.Clear();
+                Environment.Exit(0);
             }
         }
     }

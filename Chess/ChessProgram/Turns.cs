@@ -45,16 +45,24 @@ namespace Chess.ChessProgram
                     Console.Write($"{color} move: ");
 
                     move = Console.ReadLine();
-                    try
+                    if(move == "exit")
                     {
-                        pieceSymbol = board.ChessBoard[pos.PositionX(move), pos.PositionY(move)];
-                        break;
+                        MainMenu menu = new MainMenu();
+                        menu.Start();
                     }
-                    catch
+                    else
                     {
-                        Console.WriteLine("Invalid value");
-                        Console.WriteLine("Press any key to continue...");
-                        Console.ReadKey();
+                        try
+                        {
+                            pieceSymbol = board.ChessBoard[pos.PositionX(move), pos.PositionY(move)];
+                            break;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Invalid value");
+                            Console.WriteLine("Press any key to continue...");
+                            Console.ReadKey();
+                        }
                     }
 
                 } while (true);

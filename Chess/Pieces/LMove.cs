@@ -30,6 +30,20 @@ namespace Chess.Pieces
                                 + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + x));
                             listMoves.Add(move);
                         }
+                        if (board.PieceColor[p.PositionX(position) + x, p.PositionY(position) + y] == 'b'
+                            && pieceColor[p.PositionX(position), p.PositionY(position)] == 'w')
+                        {
+                            string move = Convert.ToString(p.ReturnPositionX(p.PositionY(position) + y))
+                                + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + x));
+                            listMoves.Add(move);
+                        }
+                        if (board.PieceColor[p.PositionX(position) + x, p.PositionY(position) + y] == 'w'
+                            && pieceColor[p.PositionX(position), p.PositionY(position)] == 'b')
+                        {
+                            string move = Convert.ToString(p.ReturnPositionX(p.PositionY(position) + y))
+                                + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + x));
+                            listMoves.Add(move);
+                        }
                     }
                     catch { }
                 }
@@ -48,6 +62,20 @@ namespace Chess.Pieces
                     try
                     {
                         if (board.ChessBoard[p.PositionX(position) + y, p.PositionY(position) + x] == "   ")
+                        {
+                            string move = Convert.ToString(p.ReturnPositionX(p.PositionY(position) + x))
+                                    + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + y));
+                            listMoves.Add(move);
+                        }
+                        if (board.PieceColor[p.PositionX(position) + y, p.PositionY(position) + x] == 'b'
+                            && pieceColor[p.PositionX(position), p.PositionY(position)] == 'w')
+                        {
+                            string move = Convert.ToString(p.ReturnPositionX(p.PositionY(position) + x))
+                                    + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + y));
+                            listMoves.Add(move);
+                        }
+                        if (board.PieceColor[p.PositionX(position) + y, p.PositionY(position) + x] == 'w'
+                            && pieceColor[p.PositionX(position), p.PositionY(position)] == 'b')
                         {
                             string move = Convert.ToString(p.ReturnPositionX(p.PositionY(position) + x))
                                     + Convert.ToString(p.ReturnPositionY(p.PositionX(position) + y));

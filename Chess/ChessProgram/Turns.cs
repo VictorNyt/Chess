@@ -41,11 +41,11 @@ namespace Chess.ChessProgram
                     board.DrawBoard(moves, false);
 
                     Console.WriteLine($"Turn {CountTurns}: {color}\n");
-
+                    Console.WriteLine("Type: 'Exit' to exit the game");
                     Console.Write($"{color} move: ");
 
                     move = Console.ReadLine();
-                    if(move == "exit")
+                    if(move == "exit" || move == "Exit")
                     {
                         MainMenu menu = new MainMenu();
                         menu.Start();
